@@ -22,6 +22,10 @@ function convertToObject(sourceString) {
       const key = declarationString.slice(0, colonIndex).trim();
       const value = declarationString.slice(colonIndex + 1).trim();
 
+      if (!key) {
+        return accumulator;
+      }
+
       accumulator[key] = value;
 
       return accumulator;
